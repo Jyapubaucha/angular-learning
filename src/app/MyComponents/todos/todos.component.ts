@@ -38,7 +38,15 @@ export class TodosComponent implements OnInit  {
 
   deleteTodo(todo: Todo){
     console.log(todo)
+    //Get the id to operate delete action
     const index = this.todos.indexOf(todo);
+    //Delete the todo list from the list
     this.todos.splice(index, 1);
+  }
+
+  addTodo(todo: Todo){
+    console.log(todo)
+    //Add todo to push into new list
+    this.todos.push(todo);
   }
 }

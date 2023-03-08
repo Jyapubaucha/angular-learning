@@ -10,6 +10,7 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todo: Todo;
 
+  //Passing data to parent component "Todo Component" to delete the clicked item
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
 
   constructor(){}
