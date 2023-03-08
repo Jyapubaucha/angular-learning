@@ -1,16 +1,24 @@
-<!-- Form to add todos -->
+<div class="container">
+  <h1 class="text-center mb-3">Todo list with Deepak Maharjan</h1>
+  <!-- Form to add todos -->
 
-<!-- Listen addTodo event from todos.component.ts-->
-<!-- Catch the todoAdd EventEmit from add-todo-component.ts   -->
-<app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+  <!-- Listen addTodo event from todos.component.ts-->
+  <!-- Catch the todoAdd EventEmit from add-todo-component.ts   -->
+  <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
 
-
-<h4>Your Todos</h4>
-<div *ngIf="this.todos.length===0; else elseBlock">No Todos to display.</div>
-<ng-template #elseBlock >
+  <h4>Your Todos</h4>
+  <div *ngIf="this.todos.length === 0; else elseBlock">
+    No Todos to display.
+  </div>
+  <ng-template #elseBlock>
     <!-- List of todos -->
     <div *ngFor="let todo of todos; index as i">
-        <app-todo-item [todo] = "todo" [i] = "i" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toogleTodo($event)"></app-todo-item>
+      <app-todo-item
+        [todo]="todo"
+        [i]="i"
+        (todoDelete)="deleteTodo($event)"
+        (todoCheckbox)="toogleTodo($event)"
+      ></app-todo-item>
     </div>
-</ng-template>
-
+  </ng-template>
+</div>
