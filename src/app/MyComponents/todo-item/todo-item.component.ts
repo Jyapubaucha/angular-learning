@@ -9,6 +9,7 @@ import { Todo } from 'src/app/Todo';
 export class TodoItemComponent implements OnInit {
 
   @Input() todo: Todo;
+  @Input() i: number;
 
   //Passing data to parent component "Todo Component" to delete the clicked item
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
