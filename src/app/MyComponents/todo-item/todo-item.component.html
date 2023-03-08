@@ -1,6 +1,11 @@
 <div class="my-3">
-    <h5>{{ todo.title }}</h5>
+    <h5 [class]="{'strike': !todo.active}">{{ todo.title }}</h5>
     <p>{{ todo.desc }} </p>
+
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="markAsDone" (click)="onCheckBoxClick(todo)">
+        <label class="form-check-label" for="markAsDone" >Toogle Done</label>
+    </div>
 
     <button class="btn btn-sm btn-danger" (click)="onClick(todo)"> DELETE </button>
 

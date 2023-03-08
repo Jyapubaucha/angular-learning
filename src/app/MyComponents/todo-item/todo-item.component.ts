@@ -13,6 +13,9 @@ export class TodoItemComponent implements OnInit {
   //Passing data to parent component "Todo Component" to delete the clicked item
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
 
+  //Passing data to parent component "Todo Component" to show active task or not
+  @Output() todoCheckbox: EventEmitter<Todo> = new EventEmitter();
+
   constructor(){}
 
   ngOnInit(): void {
@@ -22,6 +25,10 @@ export class TodoItemComponent implements OnInit {
   onClick(todo: Todo){
     this.todoDelete.emit(todo)
     console.log("On click has been triggered!");
+  }
+
+  onCheckBoxClick(todo: Todo){
+      this.todoCheckbox.emit(todo);
   }
 
 }
