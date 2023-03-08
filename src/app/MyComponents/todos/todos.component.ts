@@ -32,9 +32,6 @@ export class TodosComponent implements OnInit  {
     ]
   }
 
-
-
-
   ngOnInit(): void {
     
   }
